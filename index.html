@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="4.ico">
     <title>Cartas de San Valentín</title>
     <style>
         body {
@@ -115,7 +116,7 @@
     </style>
 </head>
 <body>
-    <h1>Feliz Día de San Valentín, Mi Amor ❤️</h1>
+    <h1>Feliz Día de San Valentín, Mi Reina❤️👑</h1>
     <div class="container">
         <div class="sobre" onclick="mostrarCarta(0)" data-pos="right"></div>
         <img class="imagen-central" src="1.jpeg" alt="Imagen de amor">
@@ -125,45 +126,38 @@
         <div class="sobre" onclick="mostrarCarta(3)" data-pos="left"></div>
     </div>
     
-    <div class="carta" id="carta0">Eres faro en mares de sombra,<br>
-        un sol que no teme brillar.<br>
-        Con pasos firmes, sin tregua ni duda,<br>
-        sigues luchando sin titubear.<br><br>
-        Cada día es un lienzo en tus manos,<br>
-        y con esfuerzo pintas tu historia.<br>
-        Te alzas serena, con fuerza infinita,<br>
-        tejida de sueños, envuelta en gloria. ❤️
+    <div class="carta" id="carta0">En el silencio del alba, tu risa se vuelve canto,<br>
+        iluminando senderos en la penumbra del tiempo. <br>
+        Cada esfuerzo tuyo es un destello en la sombra, <br>
+        un gesto de amor y esperanza que renueva el día. <br>
+        Así, en la danza de la existencia, <br>
+        tu esencia se alza como la luz que guía mi mirada. ❤️
     </div>
-    <div class="carta" id="carta1">Eres raíz y eres viento,<br>
-        un alma libre y tenaz.<br>
-        Firme en la tierra cuando es preciso,<br>
-        y etérea cuando hay que volar.<br><br>
-        Construyes puentes con cada palabra,<br>
-        desafías montañas con solo existir.<br>
-        Y aunque el mundo a veces te pese,<br>
-        nunca te he visto rendir.💕
+    <div class="carta" id="carta1">Ecos de Tu Esfuerzo <br>
+        Entre los giros del destino floreces con valentía, <br>
+        como la brisa que acaricia la tierra sedienta. <br>
+        Tus manos, arquitectas de sueños, <br>
+        construyen un universo de coraje y ternura. <br>
+        En cada acción se esconde un verso de amor, <br>
+        una historia que late en el pulso del infinito.💕
     </div>
-    <div class="carta" id="carta2">Hay estrellas que solo iluminan,<br>
-        pero tú además das calor.<br>
-        Eres fuego que nunca se apaga,<br>
-        eres vida, eres valor.<br><br>
-        Llevas en ti la chispa escondida<br>
-        que incendia el miedo y lo vuelve motor.<br>
-        Y cuando el mundo parece inerte,<br>
-        tu esencia lo llena de amor. 🎁
+    <div class="carta" id="carta2">Cada paso que das ilumina la senda oscura, <br>
+        como un faro en la noche, firme y sereno. <br>
+        Tu alma, repleta de luz y perseverancia, <br>
+        es la melodía que embellece el silencio. <br>
+        En el eco de tu ser encuentro la magia <br>
+        de un amor que trasciende tiempo y distancia.
     </div>
-    <div class="carta" id="carta3">No hay palabra que pueda encerrar<br>
-        el brillo inmenso que vive en ti.<br>
-        Esfuerzo y dulzura, coraje y ternura,<br>
-        todo en un alma que sabe existir.<br><br>
-        No buscas gloria, no pides aplausos,<br>
-        pero el mundo se rinde ante tu esplendor.<br>
-        Porque ser tú ya es un milagro,<br>
-        porque en ti habita lo puro y mejor.💞
+    <div class="carta" id="carta3">En el reflejo de tus días brilla la fuerza del amor, <br>
+        un latido constante que desafía la tormenta. <br>
+        Cada desafío se rinde ante tu espíritu indomable, <br>
+        como la mariposa que renace en cada amanecer. <br>
+        Así, en el susurro de la existencia, <br>
+        tu ser se transforma en un poema de infinita belleza.
     </div>
     
     <div class="footer">
-        <img class="ramo" src="3.jpg" alt="Ramo de lirios rosas">
+        <img class="ramo" src="3.png" alt="Ramo de lirios rosas">
     </div>
     
 
@@ -180,6 +174,16 @@
             carta.style.top = (sobre.getBoundingClientRect().top + window.scrollY) + 'px';
             carta.style.left = (sobre.getBoundingClientRect().left + xOffset) + 'px';
         }
+
+        document.addEventListener('click', function(event) {
+            let cartas = document.querySelectorAll('.carta');
+            let esCarta = event.target.closest('.carta');
+            let esSobre = event.target.closest('.sobre');
+            
+            if (!esCarta && !esSobre) {
+                cartas.forEach(c => c.style.display = 'none');
+            }
+        });
     </script>
 </body>
 </html>
