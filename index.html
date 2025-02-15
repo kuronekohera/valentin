@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas de San Valentín</title>
+    <style>
+        body {
+            background-color: #e291a1;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2rem; /* Tamaño de fuente responsive */
+            margin-top: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 50px;
+            position: relative;
+            padding-bottom: 175px; /* Espacio para el footer */
+        }
+        .sobre {
+            width: 100px; /* Tamaño reducido para móviles */
+            height: 70px;
+            background: url('https://cdn-icons-png.flaticon.com/512/4490/4490171.png') no-repeat center/cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .sobre:nth-child(odd) {
+            align-self: flex-start;
+            margin-left: 10px; /* Margen reducido para móviles */
+        }
+        .sobre:nth-child(even) {
+            align-self: flex-end;
+            margin-right: 10px; /* Margen reducido para móviles */
+        }
+        .sobre:hover {
+            transform: scale(1.1);
+        }
+        .carta {
+            display: none;
+            background: white;
+            width: 80%; /* Ancho adaptable */
+            max-width: 250px; /* Máximo ancho */
+            padding: 15px;
+            border-radius: 10px;
+            position: absolute;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            font-size: 14px;
+        }
+        .imagen-central {
+            width: 80%; /* Imagen adaptable */
+            max-width: 300px; /* Máximo ancho */
+            height: auto;
+            margin: 20px 0;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background: none;
+            z-index: 1000;
+        }
+        .ramo {
+            width: 80px; /* Tamaño reducido para móviles */
+            animation: flotacion 3s infinite alternate ease-in-out;
+            filter: drop-shadow(0 0 10px rgba(255, 192, 203, 0.8));
+        }
+        @keyframes flotacion {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+        .footer::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, rgba(255, 192, 203, 0.5), rgba(255, 192, 203, 0));
+            z-index: -1;
+        }
+
+        /* Media Queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem; /* Tamaño de fuente más pequeño */
+            }
+            .sobre {
+                width: 80px; /* Tamaño más pequeño para móviles */
+                height: 60px;
+            }
+            .carta {
+                width: 90%; /* Más ancho en móviles */
+                max-width: none; /* Sin límite máximo */
+            }
+            .imagen-central {
+                width: 90%; /* Más ancho en móviles */
+            }
+            .ramo {
+                width: 60px; /* Tamaño más pequeño para móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Feliz Día de San Valentín, Mi Amor ❤️</h1>
+    <div class="container">
+        <div class="sobre" onclick="mostrarCarta(0)" data-pos="right"></div>
+        <img class="imagen-central" src="1.jpeg" alt="Imagen de amor">
+        <div class="sobre" onclick="mostrarCarta(1)" data-pos="right"></div>
+        <div class="sobre" onclick="mostrarCarta(2)" data-pos="left"></div>
+        <img class="imagen-central" src="2.jpeg" alt="Imagen de amor">
+        <div class="sobre" onclick="mostrarCarta(3)" data-pos="left"></div>
+    </div>
+    
+    <div class="carta" id="carta0">Eres faro en mares de sombra,<br>
+        un sol que no teme brillar.<br>
+        Con pasos firmes, sin tregua ni duda,<br>
+        sigues luchando sin titubear.<br><br>
+        Cada día es un lienzo en tus manos,<br>
+        y con esfuerzo pintas tu historia.<br>
+        Te alzas serena, con fuerza infinita,<br>
+        tejida de sueños, envuelta en gloria. ❤️
+    </div>
+    <div class="carta" id="carta1">Eres raíz y eres viento,<br>
+        un alma libre y tenaz.<br>
+        Firme en la tierra cuando es preciso,<br>
+        y etérea cuando hay que volar.<br><br>
+        Construyes puentes con cada palabra,<br>
+        desafías montañas con solo existir.<br>
+        Y aunque el mundo a veces te pese,<br>
+        nunca te he visto rendir.💕
+    </div>
+    <div class="carta" id="carta2">Hay estrellas que solo iluminan,<br>
+        pero tú además das calor.<br>
+        Eres fuego que nunca se apaga,<br>
+        eres vida, eres valor.<br><br>
+        Llevas en ti la chispa escondida<br>
+        que incendia el miedo y lo vuelve motor.<br>
+        Y cuando el mundo parece inerte,<br>
+        tu esencia lo llena de amor. 🎁
+    </div>
+    <div class="carta" id="carta3">No hay palabra que pueda encerrar<br>
+        el brillo inmenso que vive en ti.<br>
+        Esfuerzo y dulzura, coraje y ternura,<br>
+        todo en un alma que sabe existir.<br><br>
+        No buscas gloria, no pides aplausos,<br>
+        pero el mundo se rinde ante tu esplendor.<br>
+        Porque ser tú ya es un milagro,<br>
+        porque en ti habita lo puro y mejor.💞
+    </div>
+    
+    <div class="footer">
+        <img class="ramo" src="3.jpg" alt="Ramo de lirios rosas">
+    </div>
+    
+
+    <script>
+        function mostrarCarta(indice) {
+            let cartas = document.querySelectorAll('.carta');
+            cartas.forEach(c => c.style.display = 'none');
+            let carta = document.getElementById('carta' + indice);
+            let sobre = document.querySelectorAll('.sobre')[indice];
+            let pos = sobre.getAttribute('data-pos');
+            
+            let xOffset = pos === 'left' ? -270 : 170;
+            carta.style.display = 'block';
+            carta.style.top = (sobre.getBoundingClientRect().top + window.scrollY) + 'px';
+            carta.style.left = (sobre.getBoundingClientRect().left + xOffset) + 'px';
+        }
+    </script>
+</body>
+</html>
